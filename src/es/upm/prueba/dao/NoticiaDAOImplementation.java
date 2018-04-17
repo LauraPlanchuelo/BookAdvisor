@@ -67,7 +67,7 @@ public interface NoticiaDAOImplementation implements NoticiaDAO {
 	@override
 	public List<Noticia> getAll(){
 		Session session = SessionFactoryService.get().openSession();
-		List<Noticia> noticia = new ArrayList<>();
+		List<Noticia> noticias = new ArrayList<>();
 		try {
 			session.beginTransaction();
 			fichas.addAll(session.createQuery("select t from Noticia t”).getResultList() );
@@ -76,7 +76,7 @@ public interface NoticiaDAOImplementation implements NoticiaDAO {
 		} finally {
 			session.close();
 		}
-		return fichas;
+		return noticias;
 	}
 	
 
