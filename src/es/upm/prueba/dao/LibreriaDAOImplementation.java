@@ -13,12 +13,76 @@ public interface LibreriaDAOImplementation implements LibreriaDAO {
 			instance = new LibreriaDAOimplementacion();
 		return instance;
 	}
-
-	public void create(Libreria libreria);
-	public Libreria read(String email);
-	public Libreria update(Libreria libreria);
-	public void delete(Libreria libreria);
-	public List<Libreria> getAll();
+	
+	@Override
+	public void create(Libreria libreria){
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			session.save(libreria);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+	}
+	
+	@Override
+	public Libreria read(String email){
+		Session session = SessionFactoryService.get().openSession();
+		Libreria libreria = null;
+		try {
+			libreria = session.get(TFG.class, email);
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+		return libreria;
+	}
+	
+	@Override
+	public Libreria update(Libreria libreria){
+		Session session = SessionFactoryService.get().openSession();
+	try {
+		session.beginTransaction();
+		session.saveOrUpdate(libreria);
+		session.getTransaction().commit();
+	} catch (Exception e) {
+	} finally {
+		session.close();
+		}
+	}
+	
+	@Override
+	public void delete(Libreria libreria){
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			session.delete(libreria);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		// TODO: handle exception
+		} finally {
+			session.close();
+		}
+	}
+	
+	@Override
+	public List<Libreria> getAll(){
+		Session session = SessionFactoryService.get().openSession();
+		List<Libreria> librerias = new ArrayList<>();
+		try {
+			session.beginTransaction();
+			librerias.addAll(session.createQuery("select t from Libreria t”).getResultList() );
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+		return librerias;
+	}
+		
+	@Override						     
 	public Libreria login(String email, String password){
 		Session session = SessionFactoryService.get().openSession();
 		Libreria libreria = null;
