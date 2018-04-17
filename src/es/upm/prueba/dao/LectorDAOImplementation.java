@@ -19,6 +19,22 @@ public interface LectorDAOImplementation implements LectorDAO {
 	public Lector update(Lector lector);
 	public void delete(Lector lector);
 	public List<Lector> getAll();
-	public Lector login(String email, String password);
+	public Lector login(String email, String password){
+		Session session = SessionFactoryService.get().openSession();
+		Lector lector = null;
+		try {
+			session.beginTransaction();
+			tfg = (TFG) session.createQuery (
+			“select t from TFG t where t.email= :email and t.password= :password”).
+				
+			.setParameter(“email”, email).
+			.setParameter(“password”, password).uniqueResult();
+				session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+		return lector;
+	}
 
 }
