@@ -6,11 +6,11 @@ import java.util.List;
 import es.upm.prueba.model.Noticia;
 
 public interface NoticiaDAOImplementation implements NoticiaDAO {
-	public static BibliotecaDAOimplementation instance;
-	private BibliotecaDAOimplementation() { }
-	public static BibliotecaDAOimplementation getInstance() {
+	public static NoticiaDAOimplementation instance;
+	private NoticiaDAOimplementation() { }
+	public static NoticiaDAOimplementation getInstance() {
 		if ( null == instance )
-			instance = new BibliotecaDAOimplementacion();
+			instance = new NoticiaDAOimplementacion();
 		return instance;
 	}
 
