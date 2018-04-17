@@ -6,15 +6,25 @@ import java.util.List;
 import es.upm.prueba.model.FichaLibro;
 
 public interface FichaLibroDAOImplementation implements FichaLibroDAO{
-	public static BibliotecaDAOimplementation instance;
-	private BibliotecaDAOimplementation() { }
-	public static BibliotecaDAOimplementation getInstance() {
+	public static FichaLibroDAOimplementation instance;
+	private FichaLibroDAOimplementation() { }
+	public static FichaLibroDAOimplementation getInstance() {
 		if ( null == instance )
-			instance = new BibliotecaDAOimplementacion();
+			instance = new FichaLibroDAOimplementacion();
 		return instance;
 	}
 
-	public void create(FichaLibro ficha);
+	public void create(FichaLibro ficha){
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			session.save(ficha);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+				session.close();
+		}
+		
 	public FichaLibro read(String titulo);
 	public FichaLibro update(FichaLibro ficha);
 	public void delete(FichaLibro ficha);
