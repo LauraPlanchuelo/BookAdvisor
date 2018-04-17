@@ -6,11 +6,11 @@ import java.util.List;
 import es.upm.prueba.model.Lector;
 
 public interface LectorDAOImplementation implements LectorDAO {
-	public static BibliotecaDAOimplementation instance;
-	private BibliotecaDAOimplementation() { }
-	public static BibliotecaDAOimplementation getInstance() {
+	public static LectorDAOimplementation instance;
+	private LectorDAOimplementation() { }
+	public static LectorDAOimplementation getInstance() {
 		if ( null == instance )
-			instance = new BibliotecaDAOimplementacion();
+			instance = new LectorDAOimplementacion();
 		return instance;
 	}
 
