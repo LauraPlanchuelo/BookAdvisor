@@ -25,9 +25,54 @@ public interface FichaLibroDAOImplementation implements FichaLibroDAO{
 				session.close();
 		}
 		
-	public FichaLibro read(String titulo);
-	public FichaLibro update(FichaLibro ficha);
-	public void delete(FichaLibro ficha);
-	public List<FichaLibro> getAll();
+	public FichaLibro read(String titulo){
+		Session session = SessionFactoryService.get().openSession();
+		FichaLibro libro = null;
+		try {
+			libro = session.get(libro.class, titulo);
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}		
+		return libro;
+	}
+		
+	public FichaLibro update(FichaLibro ficha){
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			session.saveOrUpdate(ficha);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+	}
+	public void delete(FichaLibro ficha){
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			session.delete(ficha);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		// TODO: handle exception
+		} finally {
+		session.close();
+	}
+}
+	public List<FichaLibro> getAll(){
+		Session session = SessionFactoryService.get().openSession();
+		List<FichaLibro> fichas = new ArrayList<>();
+		try {
+			session.beginTransaction();
+			fichas.addAll(session.createQuery("select t from FichaLibro 
+		t”).getResultList() );
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+		return fichas;
+	}
 
 }
