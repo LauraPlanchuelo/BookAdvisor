@@ -73,7 +73,8 @@ public interface LibreriaDAOImplementation implements LibreriaDAO {
 		List<Libreria> librerias = new ArrayList<>();
 		try {
 			session.beginTransaction();
-			librerias.addAll(session.createQuery("select t from Libreria t”).getResultList() );
+			librerias.addAll(session.createQuery("select t from Libreria 
+							     t”).getResultList() );
 			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {
