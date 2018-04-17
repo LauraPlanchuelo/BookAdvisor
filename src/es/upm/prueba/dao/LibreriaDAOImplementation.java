@@ -6,11 +6,11 @@ import java.util.List;
 import es.upm.prueba.model.Libreria;
 
 public interface LibreriaDAOImplementation implements LibreriaDAO {
-	public static BibliotecaDAOimplementation instance;
-	private BibliotecaDAOimplementation() { }
-	public static BibliotecaDAOimplementation getInstance() {
+	public static LibreriaDAOimplementation instance;
+	private LibreriaDAOimplementation() { }
+	public static LibreriaDAOimplementation getInstance() {
 		if ( null == instance )
-			instance = new BibliotecaDAOimplementacion();
+			instance = new LibreriaDAOimplementacion();
 		return instance;
 	}
 
@@ -24,8 +24,8 @@ public interface LibreriaDAOImplementation implements LibreriaDAO {
 		Libreria libreria = null;
 		try {
 			session.beginTransaction();
-			tfg = (TFG) session.createQuery (
-			“select t from TFG t where t.email= :email and t.password= :password”).
+			libreria = (Libreria) session.createQuery (
+			“select t from Libreria t where t.email= :email and t.password= :password”).
 				
 			.setParameter(“email”, email).
 			.setParameter(“password”, password).uniqueResult();
