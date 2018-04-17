@@ -13,7 +13,17 @@ public class BibliotecaDAOimplementation implements BibliotecaDAO {
 		return instance;
 	}
 	
-	public void create(Biblioteca biblioteca);
+	public void create(Biblioteca biblioteca){
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			session.save(biblioteca);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+				session.close();
+		}
+		
 	public Biblioteca read(String titulo);
 	public Biblioteca update(Biblioteca biblioteca);
 	public void delete(Biblioteca biblioteca);
