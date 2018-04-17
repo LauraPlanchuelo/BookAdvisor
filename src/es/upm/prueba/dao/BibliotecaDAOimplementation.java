@@ -18,5 +18,23 @@ public class BibliotecaDAOimplementation implements BibliotecaDAO {
 	public Biblioteca update(Biblioteca biblioteca);
 	public void delete(Biblioteca biblioteca);
 	public List<Biblioteca> getAll();
+	
+	public Biblioteca login(String email, String password){
+		Session session = SessionFactoryService.get().openSession();
+		Biblioteca biblioteca = null;
+		try {
+			session.beginTransaction();
+			biblioteca = (Biblioteca) session.createQuery (
+			“select t from TFG t where t.email= :email and t.password= :password”).
+				
+			.setParameter(“email”, email).
+			.setParameter(“password”, password).uniqueResult();
+				session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+		return biblioteca;
+	}
 
 }
