@@ -24,8 +24,8 @@ public interface LectorDAOImplementation implements LectorDAO {
 		Lector lector = null;
 		try {
 			session.beginTransaction();
-			tfg = (TFG) session.createQuery (
-			“select t from TFG t where t.email= :email and t.password= :password”).
+			lector = (Lector) session.createQuery (
+			“select t from Lector t where t.email= :email and t.password= :password”).
 				
 			.setParameter(“email”, email).
 			.setParameter(“password”, password).uniqueResult();
