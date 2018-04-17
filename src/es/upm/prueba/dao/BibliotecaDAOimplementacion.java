@@ -4,7 +4,7 @@ import java.util.List;
 
 import es.upm.prueba.model.Biblioteca;
 
-public interface BibliotecaDAO {
+public class BibliotecaDAOimplementacion implements BibliotecaDAO {
 	
 	public void create(Biblioteca biblioteca);
 	public Biblioteca read(String titulo);
