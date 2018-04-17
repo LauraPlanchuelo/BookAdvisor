@@ -66,7 +66,7 @@ public interface FichaLibroDAOImplementation implements FichaLibroDAO{
 		try {
 			session.beginTransaction();
 			fichas.addAll(session.createQuery("select t from FichaLibro 
-		t”).getResultList() );
+		t”).getResultList());
 			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {
