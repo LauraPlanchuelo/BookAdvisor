@@ -35,7 +35,7 @@ public interface NoticiaDAOImplementation implements NoticiaDAO {
 		} finally {
 				session.close();
 		}		
-		return libro;
+		return noticia;
 	}
 	
 	@override
