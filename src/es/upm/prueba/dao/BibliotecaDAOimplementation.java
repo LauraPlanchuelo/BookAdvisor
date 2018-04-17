@@ -25,7 +25,7 @@ public class BibliotecaDAOimplementation implements BibliotecaDAO {
 		try {
 			session.beginTransaction();
 			biblioteca = (Biblioteca) session.createQuery (
-			“select t from TFG t where t.email= :email and t.password= :password”).
+			“select t from Biblioteca t where t.email= :email and t.password= :password”).
 				
 			.setParameter(“email”, email).
 			.setParameter(“password”, password).uniqueResult();
