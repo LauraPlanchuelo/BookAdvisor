@@ -66,22 +66,6 @@ public interface LibreriaDAOImplementation implements LibreriaDAO {
 			session.close();
 		}
 	}
-	
-	@Override
-	public List<Libreria> getAll(){
-		Session session = SessionFactoryService.get().openSession();
-		List<Libreria> librerias = new ArrayList<>();
-		try {
-			session.beginTransaction();
-			librerias.addAll(session.createQuery(("select t from Libreria t”).getResultList() );
-			session.getTransaction().commit();
-		} catch (Exception e) {
-		} finally {
-			session.close();
-		}
-		return librerias;
-	}
-		
 	@Override						     
 	public Libreria login(String email, String password){
 		Session session = SessionFactoryService.get().openSession();
@@ -100,6 +84,23 @@ public interface LibreriaDAOImplementation implements LibreriaDAO {
 		}
 		return libreria;
 	}
+	
+	@Override
+	public List<Libreria> getAll(){
+		Session session = SessionFactoryService.get().openSession();
+		List<Libreria> librerias = new ArrayList<>();
+		try {
+			session.beginTransaction();
+			librerias.addAll(session.createQuery("select t from Libreria t”).getResultList() );
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+		return librerias;
+	}
+		
+	
 	
 
 }
