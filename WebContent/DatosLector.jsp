@@ -11,7 +11,6 @@
 	<body>
 
 		<p>Nombre: ${lector.name}</p>
-		<p>Apellidos: ${lector.apellidos}</p>
 		<p>Email: ${lector.email}</p>
 
 		<select name="Criticas">
@@ -19,7 +18,7 @@
 		    <c:forEach items="${criticas_array}" var="criticai">
 		    	<c:if test="${criticai.autor == lector.name}">
 					 <option value=${criticai}>${criticai.titulo}</option>
-				</c:if>  
+			</c:if>  
 		    </c:forEach>
 		</select>
 
