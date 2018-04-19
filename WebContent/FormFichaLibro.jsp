@@ -23,16 +23,16 @@
 			<p style="color: #013252;" ><label for="categoria">Categoría del libro: 
 				<select class="form-control" style="width: 250px;" name="categoria" id="categoria">
 					<optgroup label="Categoría del libro">
-						<option value="Terror">Dr. Alonso</option>
-						<option value="Ficción">Dr. Alonso</option>
-						<option value="Romántica">Dr. Alonso</option>
-						<option value="Autoayuda">Dr. Alonso</option>
-						<option value="Cómic">Dr. Alonso</option>
-						<option value="Historia">Dr. Alonso</option>
-						<option value="Ciencias">Dr. Alonso</option>
-						<option value="Aventura">Dr. Alonso</option>
-						<option value="Biografía">Dr. Alonso</option>
-						<option value="Otros">Dr. Alonso</option>				
+						<option value="Terror">"Terror"</option>
+						<option value="Ficción">"Ficción"</option>
+						<option value="Romántica">"Romántica"</option>
+						<option value="Autoayuda">"Autoayuda"</option>
+						<option value="Cómic">"Cómic"</option>
+						<option value="Historia">"Historia"</option>
+						<option value="Ciencias">"Ciencias"</option>
+						<option value="Aventura">"Aventura"</option>
+						<option value="Biografía">"Biografía"</option>
+						<option value="Otros">"Otros"</option>				
 					</optgroup>
 				</select>
 				
