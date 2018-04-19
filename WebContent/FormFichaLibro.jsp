@@ -4,8 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
-	<head>
-	</head>
 	<body>	
 		<form action="FormFichaLibro">
 
@@ -14,11 +12,10 @@
 			<input type="text" name="editorial" placeholder="Editorial del libro" />
 			<input type="text" name="ISBN" placeholder="ISBN del libro" /> 
 			<input type="text" name="formato" placeholder="Formato del libro" /> 
-			<input type="text" name="ISBN" placeholder="ISBN del libro" /> 
 			<input type="text" name="categoria" placeholder="Categoria del libro" /> 
 
 			</br>
-			Fecha de publicacion del Libro:
+			Fecha de publicación del Libro:
 			</br>
 			<fmt:formatDate var="fmtDate" value="<%=new java.util.Date()%>" pattern="dd/MM/yyyy HH:mm:ss"/>  
 			<input type="text" name="fecha" value="${fmtDate}" placeholder="${fmtDate}"/>
