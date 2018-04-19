@@ -13,7 +13,6 @@
 	<body>
 
 		<p>Nombre: ${lector.name}</p>
-		<p>Apellidos: ${lector.Apellidos}</p>
 		<p>Email: ${lector.email}</p>
 		<p>Titulo del libro: ${libro.titulo}</p>
 

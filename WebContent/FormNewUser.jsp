@@ -8,7 +8,6 @@
 		
 		<form action="CreateLectorServlet">
 
-			<input type="text" name="surname" placeholder="Apellidos" />
 			<input type="text" name="name" placeholder="Nombre" />
 			<input type="text" name="email" placeholder="Email" />
 			<input type="password" name="password" placeholder="Password">

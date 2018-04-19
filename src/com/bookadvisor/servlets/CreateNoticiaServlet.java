@@ -12,7 +12,7 @@ import com.bookadvisor.dao.NoticiaDAOImplementation;
 import com.bookadvisor.dao.model.Noticia;
 
 @WebServlet("/CreateNoticia ")
-public class CreateNoticia extends HttpServlet {
+public class CreateNoticiaServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
