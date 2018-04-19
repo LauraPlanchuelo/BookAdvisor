@@ -1,20 +1,23 @@
 package com.bookadvisor.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
 
 import com.bookadvisor.dao.model.Biblioteca;
 
-public class BibliotecaDAOimplementation implements BibliotecaDAO {
-	public static BibliotecaDAOimplementation instance;
-	private BibliotecaDAOimplementation() { }
-	public static BibliotecaDAOimplementation getInstance() {
+public class BibliotecaDAOImplementation implements BibliotecaDAO {
+
+	public static BibliotecaDAOImplementation instance;
+	private BibliotecaDAOImplementation() { }
+	public static BibliotecaDAOImplementation getInstance() {
 		if ( null == instance )
-			instance = new BibliotecaDAOimplementacion();
+			instance = new BibliotecaDAOImplementation ();
 		return instance;
 	}
 	
+	@Override
 	public void create(Biblioteca biblioteca){
 		Session session = SessionFactoryService.get().openSession();
 		try {
@@ -25,12 +28,14 @@ public class BibliotecaDAOimplementation implements BibliotecaDAO {
 		} finally {
 				session.close();
 		}
+	}
 		
+	@Override
 	public Biblioteca read(String titulo){
 		Session session = SessionFactoryService.get().openSession();
 		Biblioteca biblioteca = null;
 		try {
-			biblioteca = session.get(biblioteca.class, titulo);
+			biblioteca = session.get(Biblioteca.class, titulo);
 		} catch (Exception e) {
 		} finally {
 			session.close();
@@ -38,6 +43,7 @@ public class BibliotecaDAOimplementation implements BibliotecaDAO {
 		return biblioteca;
 	}
 		
+	@Override
 	public Biblioteca update(Biblioteca biblioteca){
 		Session session = SessionFactoryService.get().openSession();
 		try {
@@ -47,9 +53,11 @@ public class BibliotecaDAOimplementation implements BibliotecaDAO {
 		} catch (Exception e) {
 		} finally {
 			session.close();
-		
+		}
+		return biblioteca;
 	}
 		
+	@Override
 	public void delete(Biblioteca biblioteca){
 		Session session = SessionFactoryService.get().openSession();
 		try {
@@ -64,12 +72,14 @@ public class BibliotecaDAOimplementation implements BibliotecaDAO {
 		
 	}
 		
+	@Override
 	public List<Biblioteca> getAll(){
 		Session session = SessionFactoryService.get().openSession();
 		List<Biblioteca> bibliotecas = new ArrayList<>();
 		try {
 			session.beginTransaction();
-			bibliotecas.addAll(session.createQuery("select t from Biblioteca t”).getResultList() );
+			bibliotecas.addAll(session.createQuery("select t from Biblioteca t")
+					.getResultList() );
 			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {
@@ -78,22 +88,4 @@ public class BibliotecaDAOimplementation implements BibliotecaDAO {
 		return bibliotecas;
 	}
 	
-	public Biblioteca login(String email, String password){
-		Session session = SessionFactoryService.get().openSession();
-		Biblioteca biblioteca = null;
-		try {
-			session.beginTransaction();
-			biblioteca = (Biblioteca) session.createQuery (
-			“select t from Biblioteca t where t.email= :email and t.password= :password”).
-				
-			.setParameter(“email”, email).
-			.setParameter(“password”, password).uniqueResult();
-				session.getTransaction().commit();
-		} catch (Exception e) {
-		} finally {
-			session.close();
-		}
-		return biblioteca;
-	}
-
 }

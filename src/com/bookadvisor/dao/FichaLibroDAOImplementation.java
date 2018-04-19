@@ -1,19 +1,25 @@
 
 package com.bookadvisor.dao;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.hibernate.Session;
 
 import com.bookadvisor.dao.model.FichaLibro;
 
-public interface FichaLibroDAOImplementation implements FichaLibroDAO{
-	public static FichaLibroDAOimplementation instance;
-	private FichaLibroDAOimplementation() { }
-	public static FichaLibroDAOimplementation getInstance() {
+public class FichaLibroDAOImplementation implements FichaLibroDAO {
+	
+	public static FichaLibroDAOImplementation instance;
+	
+	private FichaLibroDAOImplementation() { }
+	public static FichaLibroDAOImplementation getInstance() {
 		if ( null == instance )
-			instance = new FichaLibroDAOimplementacion();
+			instance = new FichaLibroDAOImplementation();
 		return instance;
 	}
 
+	@Override
 	public void create(FichaLibro ficha){
 		Session session = SessionFactoryService.get().openSession();
 		try {
@@ -24,12 +30,14 @@ public interface FichaLibroDAOImplementation implements FichaLibroDAO{
 		} finally {
 				session.close();
 		}
+	}
 		
+	@Override
 	public FichaLibro read(String titulo){
 		Session session = SessionFactoryService.get().openSession();
 		FichaLibro libro = null;
 		try {
-			libro = session.get(libro.class, titulo);
+			libro = session.get(FichaLibro.class, titulo);
 		} catch (Exception e) {
 		} finally {
 			session.close();
@@ -37,6 +45,7 @@ public interface FichaLibroDAOImplementation implements FichaLibroDAO{
 		return libro;
 	}
 		
+	@Override
 	public FichaLibro update(FichaLibro ficha){
 		Session session = SessionFactoryService.get().openSession();
 		try {
@@ -47,7 +56,10 @@ public interface FichaLibroDAOImplementation implements FichaLibroDAO{
 		} finally {
 			session.close();
 		}
+		return ficha;
 	}
+
+	@Override
 	public void delete(FichaLibro ficha){
 		Session session = SessionFactoryService.get().openSession();
 		try {
@@ -57,16 +69,18 @@ public interface FichaLibroDAOImplementation implements FichaLibroDAO{
 		} catch (Exception e) {
 		// TODO: handle exception
 		} finally {
-		session.close();
+			session.close();
+		}
 	}
-}
+		
+	@Override
 	public List<FichaLibro> getAll(){
 		Session session = SessionFactoryService.get().openSession();
 		List<FichaLibro> fichas = new ArrayList<>();
 		try {
 			session.beginTransaction();
-			fichas.addAll(session.createQuery("select t from FichaLibro
-							  t”).getResultList());
+			fichas.addAll(session.createQuery("select t from FichaLibro t")
+					.getResultList());
 			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {

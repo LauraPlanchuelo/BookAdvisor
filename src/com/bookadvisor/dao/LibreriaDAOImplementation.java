@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.bookadvisor.dao.model.Libreria;
 
-public interface LibreriaDAOImplementation implements LibreriaDAO {
+public class LibreriaDAOImplementation implements LibreriaDAO {
 	public static LibreriaDAOimplementation instance;
 	private LibreriaDAOimplementation() { }
 	public static LibreriaDAOimplementation getInstance() {
