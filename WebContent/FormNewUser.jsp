@@ -6,7 +6,7 @@
 <html>
 	<head>
 		
-		<form action="FormNewUser">
+		<form action="CreateLectorServlet">
 
 			<input type="text" name="surname" placeholder="Apellidos" />
 			<input type="text" name="name" placeholder="Nombre" />

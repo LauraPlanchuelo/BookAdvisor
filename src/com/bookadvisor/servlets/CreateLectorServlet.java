@@ -1,4 +1,4 @@
-package com.bookadvisor.servlet;
+package com.bookadvisor.servlets;
 
 import java.io.IOException;
 
@@ -9,28 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bookadvisor.dao.LectorDAOImplementation;
-import com.bookadvisor.dao.LibreriaDAOImplementation;
 import com.bookadvisor.dao.model.Lector;
-import com.bookadvisor.dao.model.Libreria;
 
-@WebServlet("/Form1LectorServlet")
-public class Form1LectorServlet extends HttpServlet {
+@WebServlet("/CreateLectorServlet")
+public class CreateLectorServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name = req.getParameter("nombre");
+		String name = req.getParameter("name");
+		String surname = req.getParameter("surname");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-
-
-		LECTOR lector = new LECTOR();
-	    tfg.setEmail(email);
-	    tfg.setName(nombre);
-	    tfg.setPassword(password);
-	    tfg.setStatus(1);
-
-	    LectorDAOImplementation.getInstance().createLector(lector);
-
+		
+		Lector lector = new Lector()
+								.setEmail(email)
+								.setNombre(name)
+								.setPassword(password);
+		
+		LectorDAOImplementation.getInstance().create(lector);
 	    resp.sendRedirect(req.getContextPath() + "/Login.jsp");
 	}
 }
