@@ -5,7 +5,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 	<head>
-		
+	</head>
+	<body>	
 		<form action="FormFichaLibro">
 
 			<input type="text" name="title" placeholder="Título del libro" />
@@ -22,7 +23,7 @@
 			<fmt:formatDate var="fmtDate" value="<%=new java.util.Date()%>" pattern="dd/MM/yyyy HH:mm:ss"/>  
 			<input type="text" name="fecha" value="${fmtDate}" placeholder="${fmtDate}"/>
 
-			<%! public categorias = new String[11];
+			<%! { public categorias = new String[11];
 				categorias[0] = "Terror";
 				categorias[1] = "Ficcion";
 				categorias[2] = "Policiaca";
@@ -33,7 +34,7 @@
 				categorias[7] = "Ciencias";
 				categorias[8] = "Biografia";
 				categorias[9] = "Aventura";
-				categorias[10] = "Otros";  %>
+				categorias[10] = "Otros";} %>
 
 			<select name="advisor">
 			    <option value="" disabled selected>Elija una categoria:</option>
