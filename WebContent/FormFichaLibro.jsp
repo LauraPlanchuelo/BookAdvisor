@@ -23,25 +23,23 @@
 			<fmt:formatDate var="fmtDate" value="<%=new java.util.Date()%>" pattern="dd/MM/yyyy HH:mm:ss"/>  
 			<input type="text" name="fecha" value="${fmtDate}" placeholder="${fmtDate}"/>
 
-			<%! { public categorias = new String[11];
-				categorias[0] = "Terror";
-				categorias[1] = "Ficcion";
-				categorias[2] = "Policiaca";
-				categorias[3] = "Romantica";
-				categorias[4] = "Autoayuda";
-				categorias[5] = "Comic";
-				categorias[6] = "Historia";
-				categorias[7] = "Ciencias";
-				categorias[8] = "Biografia";
-				categorias[9] = "Aventura";
-				categorias[10] = "Otros";} %>
-
-			<select name="advisor">
-			    <option value="" disabled selected>Elija una categoria:</option>
-			    <c:forEach items="${categorias}" var="categoriai">
-				<option value=${categoriai}>${categoriai}</option>
-			    </c:forEach>
-			</select>
+			<p style="color: #013252;" ><label for="categoria">Categoría del libro: 
+				<select class="form-control" style="width: 250px;" name="categoria" id="categoria">
+					<optgroup label="Categoría del libro">
+						<option value="Terror">Dr. Alonso</option>
+						<option value="Ficción">Dr. Alonso</option>
+						<option value="Romántica">Dr. Alonso</option>
+						<option value="Autoayuda">Dr. Alonso</option>
+						<option value="Cómic">Dr. Alonso</option>
+						<option value="Historia">Dr. Alonso</option>
+						<option value="Ciencias">Dr. Alonso</option>
+						<option value="Aventura">Dr. Alonso</option>
+						<option value="Biografía">Dr. Alonso</option>
+						<option value="Otros">Dr. Alonso</option>				
+					</optgroup>
+				</select>
+				
+		
 			<input type="file" name="portada" accept="image/*" />
 			<input type="text" name="reseñaEditorial" placeholder="Reseña de la editorial" /> 
 
