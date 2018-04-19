@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bookadvisor.dao.FichaLibroDAOImplementation;
 import com.bookadvisor.dao.model.FichaLibro;
 
-@WebServlet("/FormFichaLibro")
+@WebServlet("/CreateFichaServlet")
 public class CreateFichaServlet extends HttpServlet {
 
 	@Override
@@ -43,6 +43,7 @@ public class CreateFichaServlet extends HttpServlet {
 									.setDate(date);
 			
 			FichaLibroDAOImplementation.getInstance().create(libro);
+			resp.sendRedirect(req.getContextPath() + "/Login.jsp");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

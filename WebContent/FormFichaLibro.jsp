@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 	<body>	
-		<form action="FormFichaLibro">
+		<form action="CreateFichaServlet">
 
 			<input type="text" name="title" placeholder="Título del libro" />
 			<input type="text" name="autor" placeholder="Autor del libro" />
