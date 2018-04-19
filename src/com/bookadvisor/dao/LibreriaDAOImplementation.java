@@ -1,16 +1,19 @@
 
 package com.bookadvisor.dao;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.hibernate.Session;
 
 import com.bookadvisor.dao.model.Libreria;
 
 public class LibreriaDAOImplementation implements LibreriaDAO {
-	public static LibreriaDAOimplementation instance;
-	private LibreriaDAOimplementation() { }
-	public static LibreriaDAOimplementation getInstance() {
+	public static LibreriaDAOImplementation instance;
+	private LibreriaDAOImplementation() { }
+	public static LibreriaDAOImplementation getInstance() {
 		if ( null == instance )
-			instance = new LibreriaDAOimplementacion();
+			instance = new LibreriaDAOImplementation ();
 		return instance;
 	}
 	
@@ -32,7 +35,7 @@ public class LibreriaDAOImplementation implements LibreriaDAO {
 		Session session = SessionFactoryService.get().openSession();
 		Libreria libreria = null;
 		try {
-			libreria = session.get(TFG.class, email);
+			libreria = session.get(Libreria.class, email);
 		} catch (Exception e) {
 		} finally {
 			session.close();
@@ -43,14 +46,15 @@ public class LibreriaDAOImplementation implements LibreriaDAO {
 	@Override
 	public Libreria update(Libreria libreria){
 		Session session = SessionFactoryService.get().openSession();
-	try {
-		session.beginTransaction();
-		session.saveOrUpdate(libreria);
-		session.getTransaction().commit();
-	} catch (Exception e) {
-	} finally {
-		session.close();
+		try {
+			session.beginTransaction();
+			session.saveOrUpdate(libreria);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
 		}
+		return libreria;
 	}
 	
 	@Override
@@ -61,7 +65,6 @@ public class LibreriaDAOImplementation implements LibreriaDAO {
 			session.delete(libreria);
 			session.getTransaction().commit();
 		} catch (Exception e) {
-		// TODO: handle exception
 		} finally {
 			session.close();
 		}
@@ -72,12 +75,11 @@ public class LibreriaDAOImplementation implements LibreriaDAO {
 		Libreria libreria = null;
 		try {
 			session.beginTransaction();
-			libreria = (Libreria) session.createQuery (
-			“select t from Libreria t where t.email= :email and t.password= :password”).
-				
-			.setParameter(“email”, email).
-			.setParameter(“password”, password).uniqueResult();
-				session.getTransaction().commit();
+			libreria = (Libreria) session.createQuery ("select t from Libreria t where t.email= :email and t.password= :password")
+					.setParameter("email", email)
+					.setParameter("password", password)
+					.uniqueResult();
+			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {
 			session.close();
@@ -91,7 +93,8 @@ public class LibreriaDAOImplementation implements LibreriaDAO {
 		List<Libreria> librerias = new ArrayList<>();
 		try {
 			session.beginTransaction();
-			librerias.addAll(session.createQuery("select t from Libreria t”).getResultList() );
+			librerias.addAll(session.createQuery("select t from Libreria t")
+					.getResultList() );
 			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {

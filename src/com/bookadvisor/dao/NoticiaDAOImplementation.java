@@ -1,36 +1,46 @@
 
 package com.bookadvisor.dao;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.hibernate.Session;
 
 import com.bookadvisor.dao.model.Noticia;
 
-@override
-public interface NoticiaDAOImplementation implements NoticiaDAO {
+public class NoticiaDAOImplementation implements NoticiaDAO {
 	
-	public static NoticiaDAOimplementation instance;
+	public static NoticiaDAOImplementation instance;
 	
-	private NoticiaDAOimplementation() { 
+	private NoticiaDAOImplementation() { 
 	
 	}
 	
-	public static NoticiaDAOimplementation getInstance() {
+	public static NoticiaDAOImplementation getInstance() {
 		if ( null == instance )
-			instance = new NoticiaDAOimplementacion();
+			instance = new NoticiaDAOImplementation ();
 		return instance;
 	}
 
-		public FichaLibro read(String titulo);
-	public FichaLibro update(FichaLibro ficha);
-	public void delete(FichaLibro ficha);
-	public List<FichaLibro> getAll();
-	
-	@override
+	@Override
+	public void create(Noticia noticia) {
+		Session session = SessionFactoryService.get().openSession();
+		try {
+			session.beginTransaction();
+			session.save(noticia);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+		} finally {
+			session.close();
+		}
+	}
+
+	@Override
 	public Noticia read(String titulo){
 		Session session = SessionFactoryService.get().openSession();
 		Noticia noticia = null;
 		try {
-			libro = session.get(noticia.class, titulo);
+			noticia = session.get(Noticia.class, titulo);
 		} catch (Exception e) {
 		} finally {
 				session.close();
@@ -38,7 +48,7 @@ public interface NoticiaDAOImplementation implements NoticiaDAO {
 		return noticia;
 	}
 	
-	@override
+	@Override
 	public Noticia update(Noticia noticia){
 		Session session = SessionFactoryService.get().openSession();
 		try {
@@ -49,9 +59,10 @@ public interface NoticiaDAOImplementation implements NoticiaDAO {
 		} finally {
 			session.close();
 		}
+		return noticia;
 	}
 	
-	@override
+	@Override
 	public void delete(Noticia noticia){
 		Session session = SessionFactoryService.get().openSession();
 		try {
@@ -59,18 +70,18 @@ public interface NoticiaDAOImplementation implements NoticiaDAO {
 			session.delete(noticia);
 			session.getTransaction().commit();
 		} catch (Exception e) {
-		// TODO: handle exception
 		} finally {
-		session.close();
+			session.close();
+		}
 	}
-}
-	@override
+	@Override
 	public List<Noticia> getAll(){
 		Session session = SessionFactoryService.get().openSession();
 		List<Noticia> noticias = new ArrayList<>();
 		try {
 			session.beginTransaction();
-			fichas.addAll(session.createQuery("select t from Noticia t”).getResultList() );
+			noticias.addAll(session.createQuery("select t from Noticia t")
+					.getResultList() );
 			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {
@@ -78,6 +89,7 @@ public interface NoticiaDAOImplementation implements NoticiaDAO {
 		}
 		return noticias;
 	}
+
 	
 
 }
