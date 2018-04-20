@@ -28,7 +28,8 @@ public class CreateFichaServlet extends HttpServlet {
 		String formato = req.getParameter("formato");
 		String categoria = req.getParameter("categoria");
 		String fecha = req.getParameter("fecha");
-		Image imagen = req.getParameter("imagen");
+		Image imagen = req.getParameter("portada");
+		String fecha = req.getParameter("reseñaEditorial");
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.FRENCH);
 		
