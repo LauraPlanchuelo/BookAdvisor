@@ -21,13 +21,13 @@ public class CreateFichaServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String titulo = req.getParameter("title");
+		String titulo = req.getParameter("titulo");
 		String autor = req.getParameter("autor");
 		String editorial = req.getParameter("editorial");
 		String ISBN = req.getParameter("ISBN");
 		String formato = req.getParameter("formato");
 		String categoria = req.getParameter("categoria");
-		String fecha = req.getParameter("date");
+		String fecha = req.getParameter("fecha");
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.FRENCH);
 		
