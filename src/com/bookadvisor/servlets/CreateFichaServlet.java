@@ -33,7 +33,6 @@ public class CreateFichaServlet extends HttpServlet {
 		String categoria = req.getParameter("categoria");
 		String fecha = req.getParameter("fecha");
 		
-		
 		Part imagePart = req.getPart("image");
 		InputStream imageContent = imagePart.getInputStream();
 		
