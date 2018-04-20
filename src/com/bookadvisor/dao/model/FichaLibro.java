@@ -13,11 +13,11 @@ public class FichaLibro implements Serializable {
 	private String formato;
 	private String ISBN;
 	
-	private List<String> resena;
+	private List<String> resenaEditorial;
 	private List<String> bibliotecas;
 	private String categoria;
-	private Date date;
-	private Image imagen;
+	private Date fecha;
+	private Image portada;
 
 	public String getTitulo() {
 		return titulo;
@@ -60,16 +60,16 @@ public class FichaLibro implements Serializable {
 	}
 	
 	public FichaLibro setISBN(String iSBN) {
-		ISBN = iSBN;
+		ISBN = ISBN;
 		return this;
 	}
 	
-	public List<String> getResena() {
-		return resena;
+	public List<String> getResEdit() {
+		return resenaEditorial;
 	}
 	
-	public FichaLibro setResena(List<String> resena) {
-		this.resena = resena;
+	public FichaLibro setResEdit(List<String> resenaEditorial) {
+		this.resenaEditorial = resenaEditorial;
 		return this;
 	}
 	
