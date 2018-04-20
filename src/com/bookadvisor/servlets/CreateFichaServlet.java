@@ -29,7 +29,7 @@ public class CreateFichaServlet extends HttpServlet {
 		String categoria = req.getParameter("categoria");
 		String fecha = req.getParameter("fecha");
 		Image imagen = req.getParameter("portada");
-		String fecha = req.getParameter("reseñaEditorial");
+		String resEdi = req.getParameter("reseñaEditorial");
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.FRENCH);
 		
@@ -44,6 +44,7 @@ public class CreateFichaServlet extends HttpServlet {
 									.setCategoria(categoria)
 									.setDate(date);
 									.setImage(imagen);
+									.setResEdit(resEdi);
 			
 			FichaLibroDAOImplementation.getInstance().create(libro);
 			resp.sendRedirect(req.getContextPath() + "/Login.jsp");
