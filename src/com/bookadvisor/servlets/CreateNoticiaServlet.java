@@ -26,5 +26,7 @@ public class CreateNoticiaServlet extends HttpServlet {
 								.setCuerpo(cuerpo);
 		
 		NoticiaDAOImplementation.getInstance().create(noticia);
+		
+		resp.sendRedirect(req.getContextPath());
 	}
 }
