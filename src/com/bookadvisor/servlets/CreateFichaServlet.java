@@ -32,6 +32,7 @@ public class CreateFichaServlet extends HttpServlet {
 		String formato = req.getParameter("formato");
 		String categoria = req.getParameter("categoria");
 		String fecha = req.getParameter("fecha");
+		String resenaEditorial = req.getParameter("fecha");
 		
 		Part imagePart = req.getPart("image");
 		InputStream imageContent = imagePart.getInputStream();
@@ -49,7 +50,8 @@ public class CreateFichaServlet extends HttpServlet {
 									.setISBN(ISBN)
 									.setFormato(formato)
 									.setCategoria(categoria)
-									.setDate(date)
+									.setDate(fecha)
+									.setResEdit(resenaEditorial)
 									.setImagen(imagen);
 			
 			FichaLibroDAOImplementation.getInstance().create(libro);
