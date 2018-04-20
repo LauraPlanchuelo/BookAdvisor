@@ -5,12 +5,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 	<head>
+		<h1>Registro del lector:</h1><br><br>
+	</head>
 		
 		<form action="CreateLectorServlet">
 
-			<input type="text" name="name" placeholder="Nombre" />
-			<input type="text" name="email" placeholder="Email" />
-			<input type="password" name="password" placeholder="Password">
+			<input type="text" name="name" placeholder="Nombre" /><br>
+			<input type="text" name="email" placeholder="Email" /><br>
+			<input type="password" name="password" placeholder="Password"><br>
 
 			<input type="submit">Crear nuevo usuario</input>
 
