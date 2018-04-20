@@ -50,7 +50,7 @@ public class CreateFichaServlet extends HttpServlet {
 									.setISBN(ISBN)
 									.setFormato(formato)
 									.setCategoria(categoria)
-									.setDate(fecha)
+									.setDate(date)
 									.setResEdit(resenaEditorial)
 									.setImagen(imagen);
 			

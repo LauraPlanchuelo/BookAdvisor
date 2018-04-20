@@ -2,6 +2,7 @@ package com.bookadvisor.dao.model;
 
 import java.awt.Image;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,11 +14,11 @@ public class FichaLibro implements Serializable {
 	private String formato;
 	private String ISBN;
 	
-	private List<String> resenaEditorial;
+	private List<String> resenaEditorial = new ArrayList<>();
 	private List<String> bibliotecas; //OJOOOOOOOO FALTA METER LAS BIBLIOS CERCANAS 
 	private String categoria;
-	private Date fecha;
-	private Image portada;
+	private Date date;
+	private Image imagen;
 
 	public String getTitulo() {
 		return titulo;
@@ -68,8 +69,8 @@ public class FichaLibro implements Serializable {
 		return resenaEditorial;
 	}
 	
-	public FichaLibro setResEdit(List<String> resenaEditorial) {
-		this.resenaEditorial = resenaEditorial;
+	public FichaLibro setResEdit(String resenaEditorial) {
+		this.resenaEditorial.add(resenaEditorial);
 		return this;
 	}
 	
