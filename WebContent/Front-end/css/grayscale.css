@@ -16,15 +16,23 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5, {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   margin: 0 0 35px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
+h6 { 
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin: 0 0 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #90A484;
+
+}
 p {
   font-size: 16px;
   line-height: 1.5;
@@ -43,28 +51,12 @@ a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
   color: #42DCA3;
 }
 
 a:focus, a:hover {
   text-decoration: none;
   color: #1d9b6c;
-  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-}
-
-b {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: #FE2E9A;
-}
-
-b:focus, a:hover {
-  text-decoration: none;
-  color: #FE2E9A;
 }
 
 #mainNav {
@@ -87,10 +79,6 @@ b:focus, a:hover {
 }
 
 #mainNav a {
-  color: white;
-}
-
-#mainNav b {
   color: white;
 }
 
@@ -136,9 +124,7 @@ b:focus, a:hover {
     color: white;
   }
 }
-.portfolio-item {
-  margin-bottom: 70px;
-}
+
 .masthead {
   display: table;
   width: 100%;
@@ -163,15 +149,6 @@ b:focus, a:hover {
   font-size: 50px;
 }
 
-.container {
-  justify-content:flex-end;
-
-}
-
-.container div {
-  justify-content:flex-end;
-
-}
 .masthead .intro-body .intro-text {
   font-size: 18px;
 }
