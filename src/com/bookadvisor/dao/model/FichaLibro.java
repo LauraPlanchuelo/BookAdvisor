@@ -14,7 +14,7 @@ public class FichaLibro implements Serializable {
 	private String ISBN;
 	
 	private List<String> resenaEditorial;
-	private List<String> bibliotecas;
+	private List<String> bibliotecas; //OJOOOOOOOO FALTA METER LAS BIBLIOS CERCANAS 
 	private String categoria;
 	private Date fecha;
 	private Image portada;
