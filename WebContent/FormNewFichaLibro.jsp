@@ -34,6 +34,6 @@
 	<input type="file" name="image" accept="image/*" />
 	<input type="text" name="resenaEditorial" placeholder="Resena de la editorial" /> 
 
-	<input type="submit">Crear nueva ficha de libro</input>
+	<input type="submit" value="crear ficha de libro"></input>
 
 </form>
