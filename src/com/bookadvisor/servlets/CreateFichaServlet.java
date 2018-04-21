@@ -35,9 +35,10 @@ public class CreateFichaServlet extends HttpServlet {
 		String resenaEditorial = req.getParameter("fecha");
 		
 		Part imagePart = req.getPart("image");
-		InputStream imageContent = imagePart.getInputStream();
-		
-		BufferedImage imagen = ImageIO.read(imageContent);
+		if ((imagePart.getSize() > 0) && ( imagePart.getSize() < 8388609)) { // Si hay imagen y es menor de 8Mbits	    
+			InputStream imageContent = imagePart.getInputStream();
+			BufferedImage imagen = ImageIO.read(imageContent);
+		}
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.FRENCH);
 		
