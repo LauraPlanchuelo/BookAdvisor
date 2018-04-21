@@ -31,7 +31,7 @@
 	</label>
 	</p>
 		
-	<input type="file" name="portada" accept="image/*" />
+	<input type="file" name="image" accept="image/*" />
 	<input type="text" name="resenaEditorial" placeholder="Resena de la editorial" /> 
 
 	<input type="submit">Crear nueva ficha de libro</input>
