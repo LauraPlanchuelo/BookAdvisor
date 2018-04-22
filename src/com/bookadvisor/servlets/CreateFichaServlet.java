@@ -34,10 +34,11 @@ public class CreateFichaServlet extends HttpServlet {
 		String fecha = req.getParameter("fecha");
 		String resenaEditorial = req.getParameter("fecha");
 		
+		BufferedImage imagen = null;
 		Part imagePart = req.getPart("image");
 		if ((imagePart.getSize() > 0) && ( imagePart.getSize() < 8388609)) { // Si hay imagen y es menor de 8Mbits	    
 			InputStream imageContent = imagePart.getInputStream();
-			BufferedImage imagen = ImageIO.read(imageContent);
+			imagen = ImageIO.read(imageContent);
 		}
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.FRENCH);
@@ -52,8 +53,10 @@ public class CreateFichaServlet extends HttpServlet {
 									.setFormato(formato)
 									.setCategoria(categoria)
 									.setDate(date)
-									.setResEdit(resenaEditorial)
-									.setImagen(imagen);
+									.setResEdit(resenaEditorial);
+			if (imagen != null) {
+				libro.setImagen(imagen);
+			}
 			
 			FichaLibroDAOImplementation.getInstance().create(libro);
 			resp.sendRedirect(req.getContextPath() + "/Login.jsp");
