@@ -38,7 +38,11 @@ p {
     margin: 0 0 35px;
   }
 }
-
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
 a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -51,6 +55,10 @@ a:focus, a:hover {
   color: #1d9b6c;
 }
 
+hr{
+    color:grey;
+    align:center;
+}
 #mainNav {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 0;
@@ -86,9 +94,9 @@ a:focus, a:hover {
   background-color: transparent;
 }
 
-#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+hr{
   outline: none;
-  background-color: transparent;
+  background-color: #f2f2f2;
 }
 
 @media (min-width: 992px) {
@@ -211,7 +219,7 @@ a:focus, a:hover {
 
 .btn {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 800;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -220,16 +228,22 @@ a:focus, a:hover {
 }
 
 .btn-default {
-  color: #42DCA3;
+  color: #000000;
   border: 1px solid #42DCA3;
   background-color: transparent;
 }
 
+.btn-primary {
+  color: white;
+  border-color: #00CED1;
+  border-radius: 15px;
+  background-color: #00CED1;
+}
 .btn-default:focus, .btn-default:hover {
   color: black;
-  border: 1px solid #42DCA3;
+  border: 1px solid #000000;
   outline: none;
-  background-color: #42DCA3;
+  background-color: #000000;
 }
 
 ul.banner-social-buttons {

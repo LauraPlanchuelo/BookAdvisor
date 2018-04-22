@@ -48,6 +48,13 @@ h6 {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+.btn-primary {
+  color: white;
+  border-color: #00CED1;
+  border-radius: 15px;
+  background-color: #00CED1;
+}
 #mainNav {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 0;
@@ -143,7 +150,7 @@ h6 {
 }
 
 .ec-stars-wrapper:hover a {
-	color: rgb(39, 130, 228);
+	color: #00CED1;
 }
 /*
  * El selector de hijo, es necesario para aumentar la especifidad
