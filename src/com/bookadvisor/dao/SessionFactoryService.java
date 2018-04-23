@@ -1,8 +1,10 @@
 package com.bookadvisor.dao;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class SessionFactoryService {
+
 	private SessionFactory sessionFactory;
 	private static SessionFactoryService sfs;
 
