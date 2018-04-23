@@ -23,7 +23,7 @@
     <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="css/sesion.css" rel="stylesheet">
+    <link href="css/catalogo.css" rel="stylesheet">
 
   </head>
 
