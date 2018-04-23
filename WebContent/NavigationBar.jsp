@@ -16,11 +16,23 @@
 		</li>
 		
 		<%
+			Cookie[] cookies = request.getCookies();
+			boolean found = false;
+			if (cookies != null) {
+				for (int i = 0; i < cookies.length; i++) {
+					if (cookies[i].getName().equals("user")) {
+						out.println("PATATAAAAA");
+						found = true;
+					}
+				}
+			}
+			if (!found) {
+				out.println("<li class=\"nav-item\">"+
+							"<a class=\"nav-link js-scroll-trigger\" href=\"iniciarsesion.jsp\" onmouseover=\"this.style.color='orange';\" onmouseout=\"this.style.color=''\">Iniciar Sesión / Registrarse</a>"+
+							"</li>");
+			}
 		%>
 		
-		<li class="nav-item">
-		  <a class="nav-link js-scroll-trigger" href="iniciarsesion.jsp" onmouseover="this.style.color='orange';" onmouseout="this.style.color=''">Iniciar Sesión / Registrarse</a>
-		</li>
 	  </ul>
 	</div>
   </div>
