@@ -84,6 +84,9 @@
     <h4 >Mis datos</h4>
       <%@ include file = "DatosLector.jsp" %>
       <%@ include file = "DatosPublicista.jsp" %>
+    <br><br><br>
+    <h4>Logout</h4>
+      <%@ include file = "FormLogout.jsp" %>
     <br><br><br><br><br><br><br><br>
     
     <br><br><br>
