@@ -25,6 +25,7 @@ public class LectorDAOImplementation implements LectorDAO {
 			session.save(lector);
 			session.getTransaction().commit();
 		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 				session.close();
 		}
@@ -94,7 +95,8 @@ public class LectorDAOImplementation implements LectorDAO {
 			session.beginTransaction();
 			lector = (Lector) session.createQuery ("select t from Lector t where t.email= :email and t.password= :password")
 					.setParameter("email", email)
-					.setParameter("password", password).uniqueResult();
+					.setParameter("password", password)
+					.uniqueResult();
 			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {

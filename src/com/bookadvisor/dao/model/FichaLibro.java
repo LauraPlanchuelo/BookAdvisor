@@ -6,13 +6,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class FichaLibro implements Serializable {
 	
+	@Id
+	private String ISBN;
 	private String titulo;
 	private String autor;
 	private String editorial;
 	private String formato;
-	private String ISBN;
 	
 	private List<String> resenaEditorial = new ArrayList<>();
 	private List<String> bibliotecas; //OJOOOOOOOO FALTA METER LAS BIBLIOS CERCANAS 

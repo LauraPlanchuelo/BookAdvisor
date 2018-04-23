@@ -2,10 +2,15 @@ package com.bookadvisor.dao.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Lector implements Serializable {
 
-	private String nombre;
+	@Id
 	private String email;
+	private String nombre;
 	private String password;
 
 	public String getNombre() {

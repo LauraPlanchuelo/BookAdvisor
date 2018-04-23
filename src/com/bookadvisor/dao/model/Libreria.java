@@ -3,12 +3,20 @@ package com.bookadvisor.dao.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Libreria implements Serializable {
 	
+	@Id
+	private String email;
 	private String nombre;
 	private String web;
-	private String email;
 	private String password;
+	@OneToMany(mappedBy = "autor", fetch = FetchType.EAGER)
 	private List<Noticia> promociones;
 	
 	public String getNombre() {

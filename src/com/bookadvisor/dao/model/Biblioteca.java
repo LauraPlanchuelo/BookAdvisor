@@ -2,8 +2,13 @@ package com.bookadvisor.dao.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Biblioteca implements Serializable {
 	
+	@Id
 	private String nombre;
 	private String web;
 	private String localizacion;

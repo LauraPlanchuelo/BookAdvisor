@@ -2,10 +2,18 @@ package com.bookadvisor.dao.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Noticia implements Serializable {
 	
+	@Id
 	private String titulo;
-	private String autor;
+
+	@ManyToOne
+	private Libreria autor;
 	private String cuerpo;
 	
 	public String getTitulo() {
@@ -17,11 +25,11 @@ public class Noticia implements Serializable {
 		return this;
 	}
 	
-	public String getAutor() {
+	public Libreria getAutor() {
 		return autor;
 	}
 	
-	public Noticia setAutor(String autor) {
+	public Noticia setAutor(Libreria autor) {
 		this.autor = autor;
 		return this;
 	}

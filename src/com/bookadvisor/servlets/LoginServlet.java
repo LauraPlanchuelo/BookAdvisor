@@ -27,19 +27,21 @@ public class LoginServlet extends HttpServlet {
 		Lector lector = LectorDAOImplementation.getInstance().login(email, password);
 		Libreria libreria = LibreriaDAOImplementation.getInstance().login(email, password);
 		Cookie ck = null;
+		
+		System.out.println(lector == null);
 
 		if (ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password) ) {
 			ck = new Cookie("user", "root");
 			resp.addCookie(ck);
-			resp.sendRedirect(req.getContextPath() + "/index.jsp");
+			resp.sendRedirect(req.getContextPath() + "/index.html");
 		} else if (null != lector) {
 			ck = new Cookie("user", "lector");
 			resp.addCookie(ck);
-			resp.sendRedirect(req.getContextPath() + "/index.jsp");
+			resp.sendRedirect(req.getContextPath() + "/index.html");
 		} else if (null != libreria) {
 			ck = new Cookie("user", "publicista");
 			resp.addCookie(ck);
-			resp.sendRedirect(req.getContextPath() + "/index.jsp");
+			resp.sendRedirect(req.getContextPath() + "/index.html");
 		} else {
 			resp.sendRedirect(req.getContextPath() + "/iniciarsesion.jsp");
 		}
