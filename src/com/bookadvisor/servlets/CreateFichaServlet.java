@@ -29,19 +29,20 @@ public class CreateFichaServlet extends HttpServlet {
 		String autor = req.getParameter("autor");
 		String editorial = req.getParameter("editorial");
 		String ISBN = req.getParameter("ISBN");
-		String formato = req.getParameter("formato");
 		String categoria = req.getParameter("categoria");
 		String fecha = req.getParameter("fecha");
-		String resenaEditorial = req.getParameter("fecha");
+		String resenaEditorial = req.getParameter("resenaEditorial");
 		
+		/*
 		BufferedImage imagen = null;
 		Part imagePart = req.getPart("image");
 		if ((imagePart.getSize() > 0) && ( imagePart.getSize() < 8388609)) { // Si hay imagen y es menor de 8Mbits	    
 			InputStream imageContent = imagePart.getInputStream();
 			imagen = ImageIO.read(imageContent);
 		}
+		*/
 		
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.FRENCH);
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy", Locale.FRENCH);
 		
 		try {
 			Date date = df.parse(fecha);
@@ -50,7 +51,6 @@ public class CreateFichaServlet extends HttpServlet {
 									.setTitulo(titulo)
 									.setEditorial(editorial)
 									.setISBN(ISBN)
-									.setFormato(formato)
 									.setCategoria(categoria)
 									.setDate(date)
 									.setResEdit(resenaEditorial);
@@ -61,7 +61,7 @@ public class CreateFichaServlet extends HttpServlet {
 			*/
 			
 			FichaLibroDAOImplementation.getInstance().create(libro);
-			resp.sendRedirect(req.getContextPath() + "/Login.jsp");
+			resp.sendRedirect(req.getContextPath() + "/index.html");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

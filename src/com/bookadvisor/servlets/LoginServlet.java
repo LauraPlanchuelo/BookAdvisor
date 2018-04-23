@@ -28,8 +28,6 @@ public class LoginServlet extends HttpServlet {
 		Libreria libreria = LibreriaDAOImplementation.getInstance().login(email, password);
 		Cookie ck = null;
 		
-		System.out.println(lector == null);
-
 		if (ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password) ) {
 			ck = new Cookie("user", "root");
 			resp.addCookie(ck);

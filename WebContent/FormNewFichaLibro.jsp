@@ -1,16 +1,13 @@
-<form action="CreateFichaServlet" method="post" enctype="multipart/form-data">
+<form action="CreateFichaServlet" method="post">
 
 	<input type="text" name="title" placeholder="Titulo del libro" />
 	<input type="text" name="autor" placeholder="Autor del libro" />
 	<input type="text" name="editorial" placeholder="Editorial del libro" />
 	<input type="text" name="ISBN" placeholder="ISBN del libro" /> 
-	<input type="text" name="formato" placeholder="Formato del libro" /> 
-	<input type="text" name="categoria" placeholder="Categoria del libro" /> 
 
 	<p>Fecha de publicacion del Libro:</p>
 
-	<fmt:formatDate var="fmtDate" value="<%=new java.util.Date()%>" pattern="dd/MM/yyyy HH:mm:ss"/>  
-	<input type="text" name="fecha" value="${fmtDate}" placeholder="${fmtDate}"/>
+	<input type="text" name="fecha" placeholder="Fecha de publicacion: dd/mm/aaaa"/>
 
 	<p style="color: #013252;" >
 	<label for="categoria">Categoria del libro: 
@@ -35,5 +32,11 @@
 	<input type="text" name="resenaEditorial" placeholder="Resena de la editorial" /> 
 
 	<input type="submit" value="crear ficha de libro"></input>
+	
+	<br/>
+	<br/>
+	-----------------------------
+	<br/>
+	<br/>
 
 </form>

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bookadvisor.dao.LibreriaDAOImplementation;
 import com.bookadvisor.dao.model.Libreria;
 
-@WebServlet("/CreateLectorServlet")
+@WebServlet("/CreatePublicistaServlet")
 public class CreatePublicistaServlet extends HttpServlet {
 
 	@Override
