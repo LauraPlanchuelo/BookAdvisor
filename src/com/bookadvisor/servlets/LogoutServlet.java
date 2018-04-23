@@ -26,10 +26,10 @@ public class LogoutServlet extends HttpServlet {
 			Cookie ck = cookies[0];
 			ck.setMaxAge(0);
             resp.addCookie(ck);
-			resp.sendRedirect(req.getContextPath() + "/index.html");
+			resp.sendRedirect(req.getContextPath() + "/index.jsp");
             System.out.println("Cookie borrada");
 		} else {
-			resp.sendRedirect(req.getContextPath() + "/index.html");
+			resp.sendRedirect(req.getContextPath() + "/index.jsp");
 		}
 	}
 
