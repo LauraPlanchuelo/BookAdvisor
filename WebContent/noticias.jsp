@@ -1,4 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html lang="en">
 
   <head>
@@ -26,28 +30,7 @@
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html" onmouseover="this.style.color='orange';" onmouseout="this.style.color=''" >BookAdvisor</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="catalogo.html" onmouseover="this.style.color='orange';" onmouseout="this.style.color=''">Catálogo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="noticias.html" style="background-color:grey;">Tablón de noticias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="iniciarsesion.jsp" onmouseover="this.style.color='orange';" onmouseout="this.style.color=''">Iniciar Sesión / Registrarse</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  	<%@ include file = "NavigationBar.jsp" %>
 
     <!-- Intro Header -->
     <header class="masthead">

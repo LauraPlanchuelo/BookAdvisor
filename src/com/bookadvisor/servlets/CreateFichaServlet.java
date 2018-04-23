@@ -61,7 +61,7 @@ public class CreateFichaServlet extends HttpServlet {
 			*/
 			
 			FichaLibroDAOImplementation.getInstance().create(libro);
-			resp.sendRedirect(req.getContextPath() + "/index.html");
+			resp.sendRedirect(req.getContextPath() + "/index.jsp");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

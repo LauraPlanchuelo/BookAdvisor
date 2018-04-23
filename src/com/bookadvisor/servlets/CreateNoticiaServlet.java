@@ -31,6 +31,6 @@ public class CreateNoticiaServlet extends HttpServlet {
 		
 		NoticiaDAOImplementation.getInstance().create(noticia);
 		
-		resp.sendRedirect(req.getContextPath());
+		resp.sendRedirect(req.getContextPath() + "/index.jsp");
 	}
 }
