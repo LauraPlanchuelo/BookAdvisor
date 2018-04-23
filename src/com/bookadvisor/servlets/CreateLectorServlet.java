@@ -26,6 +26,6 @@ public class CreateLectorServlet extends HttpServlet {
 								.setPassword(password);
 		
 		LectorDAOImplementation.getInstance().create(lector);
-	    resp.sendRedirect(req.getContextPath() + "/Login.jsp");
+	    resp.sendRedirect(req.getContextPath() + "/iniciarsesion.jsp");
 	}
 }

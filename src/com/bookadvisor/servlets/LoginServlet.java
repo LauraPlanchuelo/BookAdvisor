@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,20 +23,25 @@ public class LoginServlet extends HttpServlet {
 
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
+
 		Lector lector = LectorDAOImplementation.getInstance().login(email, password);
 		Libreria libreria = LibreriaDAOImplementation.getInstance().login(email, password);
+		Cookie ck = null;
 
 		if (ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password) ) {
-			req.getSession().setAttribute("lector_list", LectorDAOImplementation.getInstance().getAll());
-			resp.sendRedirect(req.getContextPath() + "/LoginSecretaria.jsp");
+			ck = new Cookie("user", "root");
+			resp.addCookie(ck);
+			resp.sendRedirect(req.getContextPath() + "/index.jsp");
 		} else if (null != lector) {
-			req.getSession().setAttribute("lector", lector);
-			resp.sendRedirect(req.getContextPath() + "/LoginLector.jsp");
+			ck = new Cookie("user", "lector");
+			resp.addCookie(ck);
+			resp.sendRedirect(req.getContextPath() + "/index.jsp");
 		} else if (null != libreria) {
-			req.getSession().setAttribute("libreria", libreria);
-			resp.sendRedirect(req.getContextPath() + "/LoginLibreria.jsp");
+			ck = new Cookie("user", "publicista");
+			resp.addCookie(ck);
+			resp.sendRedirect(req.getContextPath() + "/index.jsp");
 		} else {
-			resp.sendRedirect(req.getContextPath() + "/Login.jsp");
+			resp.sendRedirect(req.getContextPath() + "/iniciarsesion.jsp");
 		}
 	}
 
