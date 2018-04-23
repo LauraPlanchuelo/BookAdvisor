@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -19,11 +20,18 @@ public class FichaLibro implements Serializable {
 	private String editorial;
 	private String formato;
 	
-	private List<String> resenaEditorial = new ArrayList<>();
+	@ElementCollection(targetClass=String.class)
+	private List<String> resenaEditorial;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bibliotecas; //OJOOOOOOOO FALTA METER LAS BIBLIOS CERCANAS 
 	private String categoria;
 	private Date date;
-	private Image imagen;
+	// private Image imagen;
+	
+	public FichaLibro() {
+		this.resenaEditorial = new ArrayList<>();
+		this.bibliotecas = new ArrayList<>();
+	}
 
 	public String getTitulo() {
 		return titulo;
@@ -97,6 +105,7 @@ public class FichaLibro implements Serializable {
 		return this;
 	}
 	
+	/*
 	public Image getImagen() {
 		return imagen;
 	}
@@ -105,6 +114,7 @@ public class FichaLibro implements Serializable {
 		this.imagen = imagen;
 		return this;
 	}
+	*/
 
 	public List<String> getBibliotecas() {
 		return bibliotecas;

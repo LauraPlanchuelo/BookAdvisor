@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bookadvisor.dao.LibreriaDAOImplementation;
 import com.bookadvisor.dao.NoticiaDAOImplementation;
+import com.bookadvisor.dao.model.Libreria;
 import com.bookadvisor.dao.model.Noticia;
 
 @WebServlet("/CreateNoticia ")
@@ -20,8 +22,10 @@ public class CreateNoticiaServlet extends HttpServlet {
 		String autor = req.getParameter("pub_name");
 		String cuerpo = req.getParameter("noticia");
 		
+		Libreria publicista = LibreriaDAOImplementation.getInstance().read(autor);
+		
 		Noticia noticia = new Noticia()
-								.setAutor(autor)
+								.setAutor(publicista)
 								.setTitulo(titulo)
 								.setCuerpo(cuerpo);
 		

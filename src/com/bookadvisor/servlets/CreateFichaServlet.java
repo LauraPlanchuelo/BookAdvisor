@@ -54,9 +54,11 @@ public class CreateFichaServlet extends HttpServlet {
 									.setCategoria(categoria)
 									.setDate(date)
 									.setResEdit(resenaEditorial);
+			/*
 			if (imagen != null) {
 				libro.setImagen(imagen);
 			}
+			*/
 			
 			FichaLibroDAOImplementation.getInstance().create(libro);
 			resp.sendRedirect(req.getContextPath() + "/Login.jsp");
