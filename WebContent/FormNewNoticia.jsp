@@ -1,5 +1,5 @@
 <p>Publicista: ${publicista.name}</p>
-<p>LocalizaciÃ³n: ${publicista.localizacion}</p>
+<p>Localización: ${publicista.localizacion}</p>
 <p>Email: ${publicista.email}</p>
 
 <form action="CreateNoticiaServlet">

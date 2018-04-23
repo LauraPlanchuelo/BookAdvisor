@@ -84,6 +84,7 @@
   <section id="about" >
       <h1 class="media-heading">O, si eres nuevo por aquí... ¡a qué esperas para registrarte! </h1>
       <%@ include file = "FormNewUser.jsp" %>
+      <%@ include file = "FormNewPublicista.jsp" %>
   </section>
 
 
