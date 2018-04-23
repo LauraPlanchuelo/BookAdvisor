@@ -20,17 +20,12 @@ public class LogoutServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        ck=req.getCookies();
-        ck1=ck[0];
-        //Eliminar
-       
-        
-		
+        Cookie[] cookies = req.getCookies();
 
-		if (ck1 != null ) {
-            //Eliminar
-            ck1.setMaxAge(0);
-            resp.setCookie(ck1);
+		if (cookies != null ) {
+			Cookie ck = cookies[0];
+			ck.setMaxAge(0);
+            resp.addCookie(ck);
 			resp.sendRedirect(req.getContextPath() + "/index.html");
             System.out.println("Cookie borrada");
 		} else {
