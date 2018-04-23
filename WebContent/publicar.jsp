@@ -1,4 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html lang="en">
 
   <head>
@@ -45,7 +49,7 @@
               <a class="nav-link js-scroll-trigger" href="micuenta.jsp" onmouseover="this.style.color='orange';" onmouseout="this.style.color=''">Mi cuenta</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="publicar.html" style="background-color:grey;" >Publicar</a>
+              <a class="nav-link js-scroll-trigger" href="publicar.jsp" style="background-color:grey;" >Publicar</a>
             </li>
 
           </ul>
@@ -77,8 +81,9 @@
   <section id="about" >
     </section>
     <br><br><br>
-    <h3 >Publica una nueva entrada</h4>
-    AQUI VA EL FORMULARIO DE DATOS PARA PUBLICAR UNA FICHA DE LIBRO O UNA NOTICIA. HAY QUE HACER, POR TANTO, DOS PAGINAS DIFERENTES, UNA PARA LECTOR Y OTRO PARA EDITORIAL/LIBRERIA. SE MOSTRARÁ UNA U OTRA DEPENDIENDO DEL LOGIN QUE SE HAYA HECHO.
+    <h4 >Publica una nueva entrada</h4>
+      <%@ include file = "FormNewFichaLibro.jsp" %>
+      <%@ include file = "FormNewNoticia.jsp" %>
     <br><br><br><br><br><br><br><br>
     
     <br><br><br>

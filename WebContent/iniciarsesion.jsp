@@ -77,7 +77,7 @@
   <br><br><br><br>
   <section id="about" >
     <h1 class="media-heading">Inicia Sesión</h1>
-	<%@ include file = "Login.jsp" %>
+	<%@ include file = "FormLogin.jsp" %>
   </section>
 
   <br><br><br>
