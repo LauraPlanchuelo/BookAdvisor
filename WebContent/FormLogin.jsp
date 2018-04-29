@@ -1,28 +1,46 @@
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- Include the above in your HEAD tag -->
 
-<form action="LoginServlet">
-<div class="form-group">
-	<div id="login">
-          <fieldset class="clearfix">
-		<p><span class="fontawesome-user"></span><input style="border: none;" style="font-family: 'Open Sans', Arial, sans-serif;" style="font-size: 14px;" style="line-height: 1.5em;" style="padding: 0;" type="text"  name="email" placeholder="email" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
-	<input type="password" name="password" placeholder="password" />
-	<button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-	</div>
-</div>
-</fieldset>
-</form>
-
-<!--
-<div id="login">
+<div class="tile">
+  <div class="tile-header">
+    <h2 style="color: white; opacity: .75; font-size: 4rem; display: flex; justify-content: center; align-items: center; height: 100%;">SIGN IN</h2>
+  </div>
+  
+  <div class="tile-body">
+    <form id="form">
+      <label class="form-input">
+        <i class="material-icons">person</i>
+        <input type="text" name="email" placeholder="email" value="Username" autofocus="true" required />
+        <span class="label">Username</span>
+        <span class="underline"></span>
+      </label>
+      
+      <label class="form-input">
+        <i class="material-icons">lock</i>
+        <input type="password" name="password" placeholder="password" required />
+        <span class="label">Password</span>
+        <div class="underline"></div>
+      </label>
+      
+      <div class="submit-container clearfix" style="margin-top: 2rem;">          
+        <div id="submit" role="button" type="button" class="btn btn-irenic float-right" tabindex="0">
+          <span>Iniciar Sesión</span>
+        </div>
         
-        <form action="javascript:void(0);" method="get">
-            
-            <fieldset class="clearfix">
-                
-                <p><span class="fontawesome-user"></span><input type="text" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" 
-                <p><span class="fontawesome-lock"></span><input type="password"  value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" 
-                <p><input type="submit" value="Sign In"></p>
+        <div class="login-pending">
+          <div class=spinner>
+            <span class="dot1"></span>
+            <span class="dot2"></span>
+          </div>
+          
+          <div class="login-granted-content">
+            <i class="material-icons">done</i>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
-            </fieldset>
-
-        </form> -->
