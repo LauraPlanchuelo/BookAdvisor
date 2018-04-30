@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BA-Ficha de libro</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/ficha.css" rel="stylesheet">
+    <link href="css/footer.css.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="index.html" onmouseover="this.style.color='orange';" onmouseout="this.style.color=''">BookAdvisor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="catalogo.html" onmouseover="this.style.color='orange';" onmouseout="this.style.color=''">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="noticias.html" onmouseover="this.style.color='orange';" onmouseout="this.style.color=''">Tablón de noticias</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container" >
+
+
+
+
+    <hr class="">
+    <div class="container target">
+        <div class="row">
+            <div class="col-sm-10">
+                <h1 class="">Nombre Usuario</h1>
+
+                <button type="button" class="btn btn-success">Mis fichas</button>  <button type="button" class="btn btn-info">Mis críticas</button>
+                <br>
+            </div>
+            <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-3">
+                <!--left col-->
+                <ul class="list-group">
+                    <li class="list-group-item text-muted" contenteditable="false">Perfil</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> 2.13.2014</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Nombre</strong></span> Pedro</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role </strong></span> Lector
+
+                    </li>
+                </ul>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Websites favoritas <i class="fa fa-link fa-1x"></i>
+
+                    </div>
+                    <div class="panel-body"><a href="http://bootply.com" class="">casadelibro.com</a>
+
+                    </div>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item text-muted">Redes sociales <i class="fa fa-dashboard fa-1x"></i>
+
+                    </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Twitter</strong></span> cuentatwitter</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Instagram</strong></span> cuentainst</li>
+
+                </ul>
+
+            </div>
+            <!--/col-3-->
+            <div class="col-sm-9" style="" contenteditable="false">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Biografía</div>
+                    <div class="panel-body"> Información sobre mí y mis gustos por la lectura.
+
+                    </div>
+                </div>
+                <div class="panel panel-default target">
+                    <div class="panel-heading" contenteditable="false">Libros recomendado</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+
+                                    <div class="caption">
+                                        <h3>
+                                            INFO
+                                        </h3>
+                                        <p>
+                                           Libros preferidos.
+                                        </p>
+                                        <p>
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            <div id="push"></div>
+        </div>
+
+
+
+
+
+
+
+        <!-- End Quantcast tag -->
+        <div id="completeLoginModal" class="modal hide">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+                <h3>Do you want to proceed?</h3>
+            </div>
+            <div class="modal-body">
+                <p>This page must be refreshed to complete your login.</p>
+                <p>You will lose any unsaved work once the page is refreshed.</p>
+                <br><br>
+                <p>Click "No" to cancel the login process.</p>
+                <p>Click "Yes" to continue...</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="btnYes" class="btn danger">Yes, complete login</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary">No</a>
+            </div>
+        </div>
+        <div id="forgotPasswordModal" class="modal hide">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+                <h3>Password Lookup</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form form-horizontal" id="formForgotPassword">
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Email</label>
+                        <div class="controls">
+                            <input name="_csrf" id="token" value="CkMEALL0JBMf5KSrOvu9izzMXCXtFQ/Hs6QUY=" type="hidden">
+                            <input name="email" id="inputEmail" placeholder="you@youremail.com" required="" type="email">
+                            <span class="help-block"><small>Enter the email address you used to sign-up.</small></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer pull-center">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn">Cancel</a>
+                <a href="#" data-dismiss="modal" id="btnForgotPassword" class="btn btn-success">Reset Password</a>
+            </div>
+
+        </div>
+        <div id="upgradeModal" class="modal hide">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+                <h4>Would you like to upgrade?</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-center"><strong></strong></p>
+                <h1 class="text-center">$4<small>/mo</small></h1>
+                <p class="text-center"><small>Unlimited plys. Unlimited downloads. No Ads.</small></p>
+                <p class="text-center"><img src="/assets/i_visa.png" alt="visa" width="50"> <img src="/assets/i_mc.png" alt="mastercard" width="50"> <img src="/assets/i_amex.png" alt="amex" width="50"> <img src="/assets/i_discover.png" alt="discover" width="50"> <img src="/assets/i_paypal.png" alt="paypal" width="50"></p>
+            </div>
+            <div class="modal-footer pull-center">
+                <a href="/upgrade" class="btn btn-block btn-huge btn-success"><strong>Upgrade Now</strong></a>
+                <a href="#" data-dismiss="modal" class="btn btn-block btn-huge">No Thanks, Maybe Later</a>
+            </div>
+        </div>
+        <div id="contactModal" class="modal hide">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+                <h3>Contact Us</h3>
+                <p>suggestions, questions or feedback</p>
+            </div>
+            <div class="modal-body">
+                <form class="form form-horizontal" id="formContact">
+                    <input name="_csrf" id="token" value="CkMEALL0JBMf5KSrOvu9izzMXCXtFQ/Hs6QUY=" type="hidden">
+                    <div class="control-group">
+                        <label class="control-label" for="inputSender">Name</label>
+                        <div class="controls">
+                            <input name="sender" id="inputSender" class="input-large" placeholder="Your name" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputMessage">Message</label>
+                        <div class="controls">
+                            <textarea name="notes" rows="5" id="inputMessage" class="input-large" placeholder="Type your message here"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Email</label>
+                        <div class="controls">
+                            <input name="email" id="inputEmail" class="input-large" placeholder="you@youremail.com (for reply)" required="" type="text">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer pull-center">
+                <a href="#" data-dismiss="modal" aria-hidden="true" class="btn">Cancel</a>
+                <a href="#" data-dismiss="modal" aria-hidden="true" id="btnContact" role="button" class="btn btn-success">Send</a>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
+<!-- /.container -->
+<br><br>
+
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
